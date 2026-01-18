@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" data-i18n="seo-description"
+        content="Custom professional websites for small businesses and startups. Clean design, fast loading, and SEO-ready structure to grow your business.">
+    <title data-i18n="title">Custom Web Design & SEO-Friendly Websites for Small Business & Startups | Wert.codes
+    </title>
+
+    <link rel="canonical" href="https://wert.codes/" />
+    <link rel="alternate" hreflang="en" href="https://wert.codes/" />
+    <link rel="alternate" hreflang="de" href="https://wert.codes/de/" />
+    <link rel="alternate" hreflang="ru" href="https://wert.codes/ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://wert.codes/" />
+
+    <link rel="preload" as="image" href="/static/images/hero.avif" type="image/avif">
+    <link rel="preload" as="image" href="/static/images/Avocado.avif" type="image/avif">
+    <link rel="preload" as="image" href="/static/images/about.avif" type="image/avif">
+    <link rel="preload" href="/static/fonts/Outfit-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/static/fonts/Outfit-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- <link rel="stylesheet" href="static/styles/nav.css" />
+    <link rel="stylesheet" href="static/styles/hero.css" />
+    <link rel="stylesheet" href="static/styles/mini.css" />
+    <link rel="stylesheet" href="static/styles/about.css" />
+    <link rel="stylesheet" href="static/styles/prices.css" />
+    <link rel="stylesheet" href="static/styles/contacts.css" />
+    <link rel="stylesheet" href="static/styles/modal.css" />
+    <link rel="stylesheet" href="static/styles/keller.css" />
+    <link rel="stylesheet" href="static/styles/impres.css" />
+    <link rel="stylesheet" href="static/styles/cookies.css" /> -->
+
+    <style>
+        /* Hero block */
+        @font-face {
+            font-family: "Outfit";
+            src: url("static/fonts/Outfit/statics/Outfit-Bold.ttf") format("truetype");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Outfit';
+            src: url('/static/fonts/Outfit/statics/Outfit-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        html {
+            font-family: "Outfit", sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            font-family: "Outfit", sans-serif;
+            background-color: black;
+            color: aquamarine;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-hero {
+            position: relative;
+            color: #ffffff;
+            border-radius: 30px;
+            padding: 50px 20px;
+            text-align: center;
+            min-height: 85vh;
+            /* занимает весь экран, если контента мало */
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 65px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 0;
+            background: linear-gradient(60deg, #9eb300 0%, aquamarine 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-top: 0;
+            margin-bottom: 100px;
+            background: linear-gradient(60deg, #9eb300 0%, aquamarine 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h3 {
+            font-size: 40px;
+            font-weight: 400;
+            color: aquamarine;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dreiworte {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: rgba(127, 255, 212, 0.534);
+        }
+
+
+        .cta {
+            background-color: #ffffff00;
+            border: 2px solid aquamarine;
+            color: aquamarine;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .cta:hover {
+            background: linear-gradient(60deg, #9eb300 0%, aquamarine 100%);
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        @media (max-width: 900px) {
+            .main-hero {
+                padding: 80px 10px;
+                height: auto;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+
+            h3 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 670px) {
+            .main-hero {
+                padding: 80px 10px;
+                height: auto;
+            }
+
+            h1 {
+                font-size: 35px;
+                padding-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .cta {
+                font-size: 16px;
+            }
+        }
+
+        /* Nav block */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .losgeht {
+            background-color: black;
+            border: 2px solid aquamarine;
+            color: aquamarine;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .losgeht:hover {
+            background: linear-gradient(60deg, #9eb300 0%, aquamarine 100%);
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .logo {
+            font-size: 30px;
+            color: aquamarine;
+            text-decoration: none;
+        }
+
+        .menu-item a {
+            font-size: 20px;
+            text-decoration: none;
+            color: aquamarine;
+            display: flex;
+            text-align: center;
+        }
+
+        .drop {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .logo-place {
+            margin-left: 20px;
+        }
+
+        .menu-item {
+            width: auto;
+            justify-items: center;
+            display: flex;
+            gap: 50px;
+        }
+
+        .burger {
+            display: none;
+        }
+
+        .nav-cta {
+            margin-right: 20px;
+            text-align: right;
+        }
+
+        .lang-switch {
+            display: flex;
+            text-align: center;
+            gap: 8px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .lang-switch button {
+            padding: 6px 14px;
+            border: 2px solid aquamarine;
+            background: transparent;
+            color: aquamarine;
+            border-radius: 12px;
+            font-family: "Outfit", sans-serif;
+            cursor: pointer;
+            transition: 0.2s;
+            opacity: 0.7;
+        }
+
+        .lang-switch button.active {
+            opacity: 1;
+            background: aquamarine;
+            color: black;
+            font-weight: 600;
+        }
+
+        .lang-switch button:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .lang-switch2 {
+            display: none;
+        }
+
+        .lang-btn {
+            padding: 6px 14px;
+            border: 2px solid aquamarine;
+            background: aquamarine;
+            color: black;
+            border-radius: 12px;
+            font-family: "Outfit", sans-serif;
+            cursor: pointer;
+            transition: 0.2s;
+            font-weight: 600;
+        }
+
+        .lang-btn button:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1100px) {
+            .logo-place {
+                width: auto;
+            }
+
+            .logo {
+                margin: 10px;
+                margin-left: 0;
+            }
+
+            .menu-item {
+                gap: 30px;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+        }
+
+
+        @media (max-width: 800px) {
+            .burger {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 40px;
+                height: 32px;
+                background: none;
+                cursor: pointer;
+                z-index: 10;
+                position: relative;
+            }
+
+            .burger span {
+                display: block;
+                height: 3px;
+                width: 100%;
+                background: aquamarine;
+                border-radius: 2px;
+            }
+
+            .menu-item {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background-color: black;
+                top: 100%;
+                right: 0;
+                z-index: 10;
+                padding: 20px;
+            }
+
+            .cheeseburger.open .menu-item {
+                display: flex;
+            }
+
+            .menu-item a {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .lang-switch2 {
+                display: block;
+                margin-left: auto;
+                margin-right: 20px;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .lang-switch {
+                display: none;
+            }
+        }
+    </style>
+    <link rel="preload" href="static/styles/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript>
+        <link rel="stylesheet" href="static/styles/style.min.css">
+    </noscript>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/FI/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/FI/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/FI/favicon-16x16.png">
+    <link rel="manifest" href="static/images/FI/site.webmanifest?v=3">
+</head>
+
+<body>
+    <nav role="navigation">
+        <div class="navbar">
+            <div class="logo-place">
+                <p><a class="logo" href="https://wert.codes">Wert.Codes</a></p>
+            </div>
+            <div class="lang-switch">
+                <button data-lang="de" class="active">DE</button>
+                <button data-lang="en">EN</button>
+                <button data-lang="ru">RU</button>
+            </div>
+            <div class="lang-switch2">
+                <button id="langToggle" class="lang-btn">DE</button>
+            </div>
+            <div class="drop">
+                <div class="cheeseburger">
+                    <div class="burger" id="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="menu-item">
+                        <a data-i18n="menu-k" href="#contacts">Kontakte</a>
+                        <a data-i18n="menu-p" href="#prices">Preise</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-cta">
+                <a href="#contacts"><button data-i18n="menu-l" class="losgeht">Loslegen</button></a>
+            </div>
+        </div>
+    </nav>
+
+    <main role="main">
+        <section class="hero" id="hero">
+            <div class="main-hero">
+                <picture class="hero-bg">
+                    <source srcset="static/images/hero.avif" type="image/avif" fetchpriority="high">
+                    <source srcset="static/images/hero.webp" type="image/webp" fetchpriority="high">
+                    <img src="static/images/hero.jpg" width="1280" height="961" decoding="async" alt="wald"
+                        fetchpriority="high">
+                </picture>
+                <div class="hero-content">
+                    <p class="dreiworte" data-i18n="slogan">Einfach. Zuverlässig. Verständlich.</p>
+                    <div>
+                        <h1 data-i18n="main-slogan">Klare Websites mit echtem Wert</h1>
+                    </div>
+                    <div>
+                        <h2 data-i18n="slogan-description">für Einzelpersonen und kleine Unternehmen in Deutschland
+                        </h2>
+                    </div>
+                    <a href="#contacts"><button data-i18n="cta-button" class="cta">Unverbindlich
+                            anfragen</button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="minimalism" id="minimalism">
+            <div class="mini">
+                <div class="mini-block">
+                    <h1 data-i18n="mini-slogan">Minimalism with Purpose</h1>
+                </div>
+                <div class="mini-block">
+                    <h2 data-i18n="mini-slogan-des">Less noise. More clarity.</h2>
+                </div>
+                <div class="mini-content">
+                    <div class="mini-img">
+                        <!-- <picture class="mini-pic">
+                            <source srcset="static/images/Avocado.avif" type="image/avif" fetchpriority="high">
+                            <source srcset="static/images/Avocado.webp" type="image/webp" fetchpriority="high">
+                            <img src="static/images/Avocado.png" width="383" height="600" decoding="async" alt="Minimalism" fetchpriority="high">
+                        </picture> -->
+                        <img src="static/images/Avocado.avif" alt="Minimalism">
+                    </div>
+                    <div class="mini-text">
+                        <div class="mt">
+                            <p data-i18n="mini-text1">
+                                I create minimalist websites with a clear focus on what truly matters.
+                                Fewer elements, structured layouts, and intentional design guide users
+                                naturally – without distractions.
+                            </p>
+                        </div>
+                        <div class="mt">
+                            <p data-i18n="mini-text2">
+                                Colors, typography, and interface elements are chosen with purpose.
+                                The collaboration is clear and transparent from the first conversation
+                                to the final result.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="aboutme">
+                <div class="wert">
+                    <h1 data-i18n="about-slogan">Wert.Codes</h1>
+                </div>
+                <div class="wert">
+                    <h2 data-i18n="about-slogan-des">Webentwicklung für kleine Unternehmen und Selbstständige</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="at">
+                            <p data-i18n="about-text1">
+                                Mein Name ist Michael Pianykh. Ich bin Webentwickler und Gründer von Wert.Codes und
+                                stamme ursprünglich aus der Ukraine.
+                                Ich bin Vater von drei Kindern und jemand, für den Verantwortung und Ergebnisse keine
+                                abstrakten Begriffe sind, sondern gelebter Alltag.
+                            </p>
+                        </div>
+                        <div class="at">
+                            <p data-i18n="about-text2">
+                                In der Webentwicklung lege ich großen Wert auf Disziplin, Struktur und Zuverlässigkeit —
+                                Prinzipien, die mich früher zum Boxen geführt haben und bis heute meine professionelle
+                                Arbeit prägen.
+                                Heute unterstütze ich Selbstständige und kleine Unternehmen dabei, schnelle, klare und
+                                professionelle Websites zu erstellen, die nicht ablenken, sondern gezielt für das
+                                Geschäft arbeiten.
+                            </p>
+                        </div>
+                        <div class="at">
+                            <p data-i18n="about-text3">
+                                Ich begleite Projekte ganzheitlich — von Struktur und Design über Ladegeschwindigkeit
+                                bis hin zu SEO-Grundlagen — damit meine Kunden sich auf das Ergebnis verlassen und sich
+                                auf ihr Kerngeschäft konzentrieren können.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about-img">
+                        <!-- <picture class="mini-pic">
+                            <source srcset="static/images/about.avif" type="image/avif" fetchpriority="high">
+                            <source srcset="static/images/about.webp" type="image/webp" fetchpriority="high">
+                            <img src="static/images/about.jpg" decoding="async" alt="Michael Pianykh"
+                                fetchpriority="high">
+                        </picture> -->
+                        <img src="static/images/about.avif" alt="Michael Pianykh">
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+
+        <section class="prices" id="prices">
+            <div class="row-prices">
+                <div id="price-view">
+                    <h1 data-i18n="price-name">Preisübersicht</h1>
+                </div>
+            </div>
+            <div class="row-prices">
+                <div class="prices-slot">
+                    <div class="most-popular">
+                        <p></p>
+                    </div>
+                    <div class="a">
+                        <p class="packet" data-i18n="start">Start &#128640</p>
+                    </div>
+                    <div class="b">
+                        <span data-i18n="start-who">Für Einzelpersonen</span>
+                    </div>
+                    <div class="c">
+                        <ul class="price-list">
+                            <li data-i18n="start-1">One-Page Website</li>
+                            <li data-i18n="start-2">bis 5 Inhaltsbereiche</li>
+                            <li data-i18n="start-3">Kontaktformular</li>
+                            <li data-i18n="start-4">mobiloptimiert</li>
+                            <li data-i18n="start-5">Datenschutz und Impressum</li>
+                            <li data-i18n="start-6">Lieferung in 7–10 Werktagen</li>
+                        </ul>
+                    </div>
+                    <div class="d">
+                        <h1 data-i18n="price-start">€499</h1>
+                    </div>
+                    <div class="e">
+                        <button type="button" class="cta1" data-i18n="price-choice"
+                            data-package="start">Auswählen</button>
+                    </div>
+                    <div class="notice" data-i18n="notice">
+                        <p>Festpreis. Keine versteckten Kosten.</p>
+                    </div>
+                </div>
+                <div class="prices-slot active" id="main-slot">
+                    <div class="most-popular" data-i18n="most-popular" id="thebest">
+                        <p>Empfohlen</p>
+                    </div>
+                    <div class="a">
+                        <p class="packet" data-i18n="business">Business &#128188</p>
+                    </div>
+                    <div class="b">
+                        <span data-i18n="business-who">Für kleine Unternehmen</span>
+                    </div>
+                    <div class="c">
+                        <ul class="price-list">
+                            <li data-i18n="business-1" style="font-weight: bold;">Alles aus „Start“ plus:</li>
+                            <li data-i18n="business-2">Website mit mehreren Seiten</li>
+                            <li data-i18n="business-3">Klare Navigation</li>
+                            <li data-i18n="business-4">Grundlegende Suchmaschinenoptimierung (SEO)</li>
+                            <li data-i18n="business-5">Lieferung in 10–14 Werktagen</li>
+                        </ul>
+                    </div>
+                    <div class="d">
+                        <h1 data-i18n="price-business">€899</h1>
+                    </div>
+                    <div class="e">
+                        <button type="button" class="cta1" data-i18n="price-choice" id="best"
+                            data-package="business">Auswählen</button>
+                    </div>
+                    <div class="notice" data-i18n="notice">
+                        <p>Festpreis. Keine versteckten Kosten.</p>
+                    </div>
+                </div>
+                <div class="prices-slot">
+                    <div class="most-popular">
+                        <p></p>
+                    </div>
+                    <div class="a">
+                        <p class="packet" data-i18n="premium">Premium &#127942</p>
+                    </div>
+                    <div class="b">
+                        <span data-i18n="premium-who">Für etablierte Unternehmen</span>
+                    </div>
+                    <div class="c">
+                        <ul class="price-list">
+                            <li data-i18n="premium-1" style="font-weight: bold;">Alles aus „Business“ plus:</li>
+                            <li data-i18n="premium-2">mehrere Sprachen</li>
+                            <li data-i18n="premium-3">Erweiterte Suchmaschinenoptimierung (SEO)</li>
+                            <li data-i18n="premium-4">individuelle Funktionen</li>
+                            <li data-i18n="premium-5">Lieferung ab 30 Werktagen</li>
+                        </ul>
+                    </div>
+                    <div class="d">
+                        <h1 data-i18n="price-premium">€1499</h1>
+                    </div>
+                    <div class="e">
+                        <button type="button" class="cta1" data-i18n="price-choice"
+                            data-package="premium">Auswählen</button>
+                    </div>
+                    <div class="notice" data-i18n="notice">
+                        <p>Festpreis. Keine versteckten Kosten.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="domain-hosting">
+                <p data-i18n="domain"></p>
+            </div>
+
+        </section>
+
+        <section class="contacts" id="contacts">
+            <div class="row-contacts">
+                <div class="slogan">
+                    <h1><span class="slogan-cta" data-i18n="contact-slogan"></span></h1>
+                </div>
+                <div class="form">
+                    <form id="myForm"
+                        action="https://script.google.com/macros/s/AKfycbyUQNEmu7LjCS0UnttGCTOtjER5GH3eytH91v_GCGZHOdVREDq7ivmJFLvU4vtrEDw/exec"
+                        method="POST" target="hidden_iframe">
+                        <div class="row-input">
+                            <input name="name" id="name" class="cont" type="text" data-i18n="ph-vorname"
+                                autocomplete="given-name" placeholder="* Vorname" required>
+                            <input name="lastname" id="lastname" class="cont" type="text" data-i18n="ph-nachname"
+                                autocomplete="family-name" placeholder="Nachname">
+                        </div>
+                        <div class="row-input">
+                            <input name="email" id="email" class="cont" type="email" data-i18n="ph-email"
+                                autocomplete="email" placeholder="* Email" required>
+                            <input name="telefon" id="telefon" class="cont" type="text" data-i18n="ph-telefon"
+                                autocomplete="tel" placeholder="Telefonnummer">
+                        </div>
+                        <div class="row-input">
+                            <textarea class="cont" name="description" id="description" data-i18n="ph-text"
+                                placeholder="Bitte beschreiben Sie Ihre Website" autocomplete="off"></textarea>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-label">
+                                <input id="consent" name="consent" type="checkbox" required autocomplete="off">
+                                <span data-i18n="accept">* Ich akzeptiere die </span>
+                                <a href="#" class="opendata" data-type="datenschutz"
+                                    data-i18n="accept-daten">Datenschutzerklärung</a>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="hidden" name="package" id="selected-package">
+                            <input type="hidden" name="lang" id="formLang" value="de">
+                            <button class="submit" data-i18n="submit" type="submit">Einreichen</button>
+                        </div>
+
+                        <script src="static/files/submit.js"></script>
+                        <iframe id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
+
+                        <div id="modal2" class="modal2 hidden">
+                            <div class="modal-thank">
+                                <h1 id="thank" data-i18n="thank">Danke</h1>
+                                <p class="thank-text" id="thank-description" data-i18n="thank-description">Ihre Anfrage
+                                    wurde gesendet. Wir werden uns in Kürze mit Ihnen in Verbindung setzen.</p>
+                                <button id="close-modal2" data-i18n="modal-close" class="close-btn">Schließen</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="keller">
+            <div class="row-keller">
+                <div class="keller-cell">
+                    <p class="keller-text" data-i18n="copyright">© 2026 Wert.Codes<br>Alle Rechte vorbehalten</p>
+                </div>
+                <div class="keller-cell">
+                    <p>
+                        <span class="keller-text">
+                            <a href="#" class="opendata" data-type="impressum" data-i18n="legal">Impressum</a>
+                        </span>
+                    </p>
+                </div>
+                <div class="keller-cell">
+                    <p>
+                        <span class="keller-text">
+                            <a href="#" class="opendata" data-type="datenschutz" data-i18n="privacy">Datenschutz</a>
+                        </span>
+                    </p>
+                </div>
+                <div class="keller-cell">
+                    <p>
+                        <span class="keller-text">
+                            <a href="#" id="cookie-settings" data-i18n="cookie-label">Cookie-Einstellungen</a>
+                        </span>
+                    </p>
+                </div>
+                <div class="keller-cell" id="email-address">
+                    <p class="keller-text"><a href="mailto:info@wert.codes">info@wert.codes</a></p>
+                </div>
+            </div>
+            <div id="modal-overlay" class="modal-overlay hidden"></div>
+
+            <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-content">
+                <div class="modal-content" id="modal-content"></div>
+                <button id="close-modal" data-i18n="modal-close" class="close-btn">Schließen</button>
+            </div>
+        </div>
+
+        <div id="cookie-consent" class="cookie-banner">
+            <div class="cook">
+                <span data-i18n="cookies">Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. </span>
+            </div>
+            <div class="cook">
+                <a href="#" class="opendata" data-type="datenschutz" data-i18n="cookies-privacy">Datenschutz</a>
+            </div>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" data-i18n="cookies-yes">Akzeptieren</button>
+                <button id="reject-cookies" data-i18n="cookies-no">Ablehnen</button>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" aria-label="Up">↑</button>
+    <script src="static/files/wert.js" defer></script>
+    <script type="module" src="static/files/main.js"></script>
+</body>
+
+</html>
