@@ -1,0 +1,106 @@
+.aboutme {
+  background: linear-gradient(78deg, #40a04b 0%, #4852db 100%);
+  border-radius: 30px;
+  text-align: center;
+  min-height: 100vh;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+}
+
+.about-content {
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 30px;
+  padding-right: 30px;
+}
+
+.about-img img {
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+}
+
+.wert h2 {
+  margin: 0;
+  padding-bottom: 40px;
+}
+
+.about-img {
+  width: auto;
+}
+
+.about-text {
+  width: 65%;
+  margin: 0;
+  text-align: left;
+  color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.at {
+  font-size: 18px;
+  color: aquamarine;
+  padding-left: 150px;
+  padding-right: 150px;
+  justify-content: baseline;
+}
+
+@media (max-width: 1200px) {
+  .at {
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+}
+
+@media (max-width: 1000px) {
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-img {
+    margin-top: 30px;
+  }
+
+  .about-text {
+    width: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .about-img, .about-text {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .wert {
+    padding: 10px;
+  }
+
+  .at {
+    font-size: 16px;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-content {
+    padding: 10px;
+    padding-bottom: 20px;
+  }
+
+  .about-img img {
+    height: 300px;
+  }
+}

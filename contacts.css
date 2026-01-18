@@ -1,0 +1,202 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(78deg, #40a04b 0%, #4852db 100%);  
+  border-radius: 30px;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.row-contacts {
+  display: flex;
+  align-items: flex-start;
+  height: auto;
+  gap: 50px;
+  padding: 50px;
+}
+.slogan {
+  flex: 1;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.slogan-cta {
+  color: aquamarine;
+}
+
+.form {
+  display: block;
+  flex: 2;
+  margin-bottom: 30px;
+}
+.row-input {
+  display: flex;
+  gap: 15px;
+  margin: 15px;
+  flex-wrap: wrap;
+}
+
+.row-input textarea {
+  height: 9.6em;
+  width: 100%;
+}
+
+.cont {
+  flex: 1;                  /* равная ширина всех полей в строке */
+  min-width: 150px;         /* минимальная ширина для узких экранов */
+  padding: 0.6em 1em;
+  border-radius: 10px;
+  border: 2px solid aquamarine;
+  background: transparent;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.1em;
+  outline: none;
+  color: aquamarine;
+  box-sizing: border-box;
+  margin: 0;                /* убираем старые маргины, gap теперь управляет расстоянием */
+}
+
+.cont::placeholder {
+  opacity: 0.6;
+  color: aquamarine !important;
+}
+
+textarea.cont::placeholder {
+  opacity: 0.6;
+  color:  aquamarine !important;
+}
+
+[data-i18n] {
+  transition: opacity 0.2s;
+}
+
+textarea::placeholder, input::placeholder {
+  color: inherit;
+  opacity: 0.6;
+}
+
+.checkbox {
+  color: aquamarine;
+}
+.checkbox a {
+  text-decoration: underline;
+  color: aquamarine;
+}
+.submit {
+  background-color: aquamarine;
+  border: 2px solid aquamarine;
+  color: #24229b;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 80px;
+}
+
+/* .submit:hover {
+  background: linear-gradient(60deg, #9eb300 0%, aquamarine 100%);
+  color:  #24229b;
+  transition: background-color 0.3s, color 0.3s;
+} */
+
+@media (max-width: 1500px) {
+  .slogan h1 {
+    margin-bottom: 20px;
+    font-size: 50px;
+  }
+  .checkbox-label {
+    align-items: center;
+    gap: 8px;
+  }
+
+}
+
+@media (max-width: 1050px) {
+  .row-contacts {
+    flex-direction: column;
+    gap: 40px;
+}
+
+  .slogan, .form {
+    width: 100%;  
+    padding: 0px;
+}
+
+  .slogan {
+    margin-bottom: 20px;
+    font-size: 50px;    
+  }
+  
+  .row-input {
+    flex-direction: column; 
+  }
+
+  .row-input input, .row-input textarea {
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .row-input textarea {
+    min-height: 140px;
+  }  
+  
+  .cont, #description {
+    margin-bottom: 10px; 
+  }
+}
+@media (max-width: 500px) {
+  .row-contacts {
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;    
+    gap: 30px;
+}
+
+  .slogan {
+    width: 100%;  
+    padding: 0;
+    margin: 0;
+}
+
+  .form {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .slogan h1{
+    margin-bottom: 20px;
+    font-size: 40px;    
+  }
+  
+  .row-input {
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  .row-input input {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .cont, #description {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .checkbox-label {
+    display: inline;
+    align-items: center;
+    gap: 8px;
+    font-size: smaller;
+  }
+
+  .submit {
+    font-size: 16px;
+  }
+} 

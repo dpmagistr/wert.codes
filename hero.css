@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Outfit";
+  src: url("/static/fonts/Outfit-Regular.woff2") format("woff2"),
+       url("/static/fonts/Outfit-Regular.woff") format("woff"); /* на всякий случай */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url("/static/fonts/Outfit-Bold.woff2") format("woff2"),
+       url("/static/fonts/Outfit-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: "Outfit", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: black;
+  color: aquamarine;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.main-hero {
+  position: relative;
+  color: #ffffff;
+  border-radius: 30px;
+  padding: 50px 20px;
+  text-align: center;
+  min-height: 85vh; /* занимает весь экран, если контента мало */
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 65px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: linear-gradient(60deg, #9eb300 0%, aquamarine 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+h2 {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 100px;
+  background: linear-gradient(60deg, #9eb300 0%, aquamarine 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: 400;
+  color: aquamarine;
+  margin: 0;
+  padding: 0;
+}
+
+.dreiworte {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: rgba(127, 255, 212, 0.534);
+}
+
+
+.cta {
+  background-color: #ffffff00;
+  border: 2px solid aquamarine;
+  color: aquamarine;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background: linear-gradient(60deg, #9eb300 0%, aquamarine 100%);
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@media (max-width: 900px) {
+  .main-hero {
+    padding: 80px 10px;
+    height: auto;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 670px) {
+  .main-hero {
+    padding: 80px 10px;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 35px;
+    padding-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 18px;
+  }
+  
+  .cta {
+    font-size: 16px;
+  }
+}
